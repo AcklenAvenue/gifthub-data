@@ -2,6 +2,7 @@ var hapi = require('hapi');
 var inert = require('inert');
 var mongoose = require('mongoose');
 var User = require('./schemas/user');
+var boom = require('boom');
 
 var server = new hapi.Server();
 server.connection({
