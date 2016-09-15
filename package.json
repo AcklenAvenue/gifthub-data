@@ -1,10 +1,10 @@
 {
-  "name": "angular-scaffold",
+  "name": "gifthub",
   "version": "1.0.0",
-  "description": "Angular scaffold with hapi.js serving it",
-  "main": "server/server.js",
+  "description": "Gifthub data container",
+  "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
