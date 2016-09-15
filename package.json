@@ -4,11 +4,11 @@
   "description": "Gifthub data container",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ZSnake/angular-scaffold.git"
+    "url": "https://github.com/AcklenAvenue/gifthub-data"
   },
   "keywords": [
     "angular",
@@ -20,9 +20,9 @@
   "author": "Viktor Zavala",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ZSnake/angular-scaffold/issues"
+    "url": "https://github.com/AcklenAvenue/gifthub-data/issues"
   },
-  "homepage": "https://github.com/ZSnake/angular-scaffold#readme",
+  "homepage": "https://github.com/AcklenAvenue/gifthub-data#readme",
   "dependencies": {
     "hapi": "^11.1.0",
     "hapi-mongodb": "^4.1.0",
