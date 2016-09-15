@@ -2,7 +2,6 @@ var hapi = require('hapi');
 var inert = require('inert');
 var mongoose = require('mongoose');
 var User = require('./schemas/user');
-var boom = require('boom');
 
 var server = new hapi.Server();
 server.connection({
@@ -21,16 +20,14 @@ db.once('open', function callback() {
 server.register([inert], function(err){
 	server.route([{method: 'POST', path: '/email', config:{
         handler: function(request, reply){
-            console.log(request.payload);
             var newUser = new User({
                 email: request.payload.email
             });
             newUser.save(function(err){
                 if(err){
                     console.log(err);
-                    boom.badRequest("Couldn't save email into the server");
+                    reply("Error saving email");
                 }
-                console.log("all good");
                 reply("Email saved");
             });
         }
