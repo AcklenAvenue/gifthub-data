@@ -18,7 +18,10 @@ db.once('open', function callback() {
 });
 
 server.register([inert], function(err){
-	server.route([{method: 'POST', path: '/email', config:{
+	server.route([{method: 'GET', path: '/', config: {handler: function(request, reply){
+        reply('Api Gifthub');
+    }}}
+        {method: 'POST', path: '/email', config:{
         handler: function(request, reply){
             var newUser = new User({
                 email: request.payload.email
