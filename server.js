@@ -6,7 +6,7 @@ var User = require('./schemas/user');
 var server = new hapi.Server();
 server.connection({
     port: ~~process.env.PORT | 8000,
-    routes: {cors:true}
+    routes: { cors: {origin: ['*']} }
 });
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/gifthub');
