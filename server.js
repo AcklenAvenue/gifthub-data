@@ -5,7 +5,7 @@ var User = require('./schemas/user');
 
 var server = new hapi.Server();
 server.connection({
-    port: ~~process.env.PORT | 8000,
+    port: process.env.PORT || 8000,
     routes: { cors: true }
 });
 
