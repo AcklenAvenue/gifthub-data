@@ -6,7 +6,7 @@ var User = require('./schemas/user');
 var server = new hapi.Server();
 server.connection({
     port: ~~process.env.PORT | 8000,
-    routes: {cors:true}
+    routes: { cors: true }
 });
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/gifthub');
@@ -18,9 +18,10 @@ db.once('open', function callback() {
 });
 
 server.register([inert], function(err){
-	server.route([{method: 'GET', path: '/', config: {handler: function(request, reply){
-        reply('Api Gifthub');
-    }}},
+	server.route([
+        {method: 'GET', path: '/', config: {handler: function(request, reply){
+            reply('Api Gifthub');
+        }}},
         {method: 'POST', path: '/email', config:{
         handler: function(request, reply){
             var newUser = new User({
